@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book Success Labeling</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Book Success Labeling</h1>
+
+      <section id="controls" class="card">
+        <div class="range-controls">
+          <label>Start index: <input id="start_index" type="number" value="0" min="0" /></label>
+          <label>End index: <input id="end_index" type="number" value="0" min="0" /></label>
+          <button id="load_range">Load range</button>
+        </div>
+        <div class="toggles">
+          <label><input id="skip_labeled" type="checkbox" checked /> Skip already labeled</label>
+          <label><input id="show_labeled" type="checkbox" /> Show labeled entries</label>
+        </div>
+        <section id="progress" class="progress">Labeled 0 / 0 (range)</section>
+      </section>
+
+      <section class="card" id="item_view">
+        <div class="item-top">
+          <strong>Index:</strong> <span id="sample_index">-</span>
+          <button id="prev">Prev</button>
+          <button id="next">Next</button>
+        </div>
+
+        <h2 id="title">Title</h2>
+
+        <div id="groups">
+          <!-- groups will be populated by JS: metadata, critical, popular, review, commercial -->
+        </div>
+
+        <section class="label-section">
+          <h3>Labels</h3>
+          <label>Critical success
+            <select id="critical_success_label">
+              <option value="">-- select --</option>
+              <option>Low</option>
+              <option>Moderate</option>
+              <option>High</option>
+              <option>Canonical</option>
+            </select>
+          </label>
+
+          <label>Popular success
+            <select id="popular_success_label">
+              <option value="">-- select --</option>
+              <option>Low</option>
+              <option>Moderate</option>
+              <option>High</option>
+              <option>Viral</option>
+            </select>
+          </label>
+
+          <label>Commercial success
+            <select id="commercial_success_label">
+              <option value="">-- select --</option>
+              <option>Failure</option>
+              <option>Low Sales</option>
+              <option>Moderate</option>
+              <option>Bestseller</option>
+              <option>Blockbuster</option>
+            </select>
+          </label>
+
+          <label>Annotator (optional)
+            <input id="annotator" placeholder="Your name or initials" />
+          </label>
+
+          <div class="buttons">
+            <button id="save">Save label</button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">Open-source, local-only app for trusted team labeling.</footer>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
